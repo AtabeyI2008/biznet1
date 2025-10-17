@@ -1,0 +1,321 @@
+/* FREELANCERS PAGE STYLES */
+.freelancers-listing {
+    padding: 3rem 0;
+    background: #f7fafc;
+}
+
+.listing-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+/* FREELANCER CARD STYLES */
+.freelancer-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.freelancer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.freelancer-card.featured {
+    border-left: 4px solid #f6ad55;
+    background: linear-gradient(90deg, rgba(246, 173, 85, 0.05) 0%, transparent 100%);
+}
+
+.freelancer-card.premium::before {
+    content: 'PREMIUM';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f6ad55;
+    color: #1a202c;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.freelancer-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.freelancer-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 3px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.freelancer-info {
+    flex: 1;
+}
+
+.freelancer-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.freelancer-title {
+    color: #4299e1;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.freelancer-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.freelancer-location,
+.freelancer-rating,
+.freelancer-jobs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.freelancer-rating {
+    color: #f6ad55;
+    font-weight: 600;
+}
+
+.freelancer-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.freelancer-skills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.skill-tag {
+    background: #edf2f7;
+    color: #4a5568;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: #4299e1;
+    color: white;
+}
+
+.freelancer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.freelancer-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.freelancer-rate {
+    color: #48bb78;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.freelancer-availability {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.freelancer-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-profile-btn {
+    background: #4299e1;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-profile-btn:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.contact-btn {
+    background: #48bb78;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-btn:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+.save-freelancer-btn {
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    color: #718096;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-freelancer-btn:hover {
+    border-color: #4299e1;
+    color: #4299e1;
+}
+
+.save-freelancer-btn.saved {
+    background: #4299e1;
+    color: white;
+    border-color: #4299e1;
+}
+
+/* ONLINE STATUS */
+.online-status {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(72, 187, 120, 0.1);
+    color: #48bb78;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.online-status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #48bb78;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* VERIFICATION BADGE */
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #48bb78;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .listing-container {
+        grid-template-columns: 250px 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .listing-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .freelancer-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .freelancer-avatar {
+        align-self: center;
+    }
+    
+    .freelancer-meta {
+        justify-content: center;
+    }
+    
+    .freelancer-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .freelancer-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .freelancer-card {
+        padding: 1.5rem;
+    }
+    
+    .freelancer-actions {
+        flex-direction: column;
+    }
+    
+    .view-profile-btn,
+    .contact-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

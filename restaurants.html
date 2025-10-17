@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran & Marketlər - BizNet.az</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="restaurants.css">
+    <link rel="stylesheet" href="jobs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>BizNet<span>.az</span></h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="jobs.html">Bütün Elanlar</a></li>
+                    <li><a href="freelancers.html">Freelancerlar</a></li>
+                    <li><a href="companies.html">Şirkətlər</a></li>
+                    <li><a href="restaurants.html" class="active">Restoran/Market</a></li>
+                    <li><a href="post-job.html" class="post-job-btn">Elan Yerləşdir</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-auth">
+                <a href="login.html" class="login-btn">Giriş</a>
+                <a href="login.html" class="register-btn">Qeydiyyat</a>
+            </div>
+
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Restoran & Marketlər</h1>
+                <p>200-dən çox restoran və market - qastronomiya və pərakəndə satış sahəsində karyera imkanları</p>
+                
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="number">156</span>
+                        <span class="label">Restoran</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">89</span>
+                        <span class="label">Market</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">245</span>
+                        <span class="label">Açıq Vəzifə</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">32</span>
+                        <span class="label">Yeni Bu Həftə</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="search-filters">
+        <div class="container">
+            <div class="filters-container">
+                <!-- QUICK FILTERS -->
+                <div class="quick-filters">
+                    <button class="filter-btn active" data-type="all">Hamısı</button>
+                    <button class="filter-btn" data-type="restaurant">Restoranlar</button>
+                    <button class="filter-btn" data-type="market">Marketlər</button>
+                    <button class="filter-btn" data-type="cafe">Kafelər</button>
+                    <button class="filter-btn" data-type="fastfood">Fast Food</button>
+                    <button class="filter-btn" data-type="premium">Premium</button>
+                </div>
+
+                <!-- ADVANCED FILTERS -->
+                <div class="advanced-filters">
+                    <div class="filter-group">
+                        <label>Mətbəx Növü</label>
+                        <select class="filter-select" id="cuisineType">
+                            <option value="">Bütün mətbəxlər</option>
+                            <option value="azeri">Azərbaycan</option>
+                            <option value="turkish">Türk</option>
+                            <option value="european">Avropa</option>
+                            <option value="asian">Asiya</option>
+                            <option value="american">Amerikan</option>
+                            <option value="italian">İtalyan</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Şəhər</label>
+                        <select class="filter-select" id="locationFilter">
+                            <option value="">Bütün şəhərlər</option>
+                            <option value="baku">Bakı</option>
+                            <option value="ganja">Gəncə</option>
+                            <option value="sumgait">Sumqayıt</option>
+                            <option value="lankaran">Lənkəran</option>
+                            <option value="mingachevir">Mingəçevir</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Qiymət Aralığı</label>
+                        <select class="filter-select" id="priceRange">
+                            <option value="">Hər hansı qiymət</option>
+                            <option value="budget">₼ 500-800</option>
+                            <option value="medium">₼ 800-1200</option>
+                            <option value="high">₼ 1200-2000</option>
+                            <option value="premium">₼ 2000+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>İş Növü</label>
+                        <select class="filter-select" id="jobType">
+                            <option value="">Bütün iş növləri</option>
+                            <option value="full-time">Tam ştat</option>
+                            <option value="part-time">Yarımştat</option>
+                            <option value="shift">Növbəli</option>
+                            <option value="seasonal">Mövsümi</option>
+                        </select>
+                    </div>
+
+                    <button class="apply-filters-btn" onclick="restaurantsSystem.applyFilters()">Filtrlə</button>
+                    <button class="reset-filters-btn" onclick="restaurantsSystem.resetFilters()">Sıfırla</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS LISTING -->
+    <section class="restaurants-listing">
+        <div class="container">
+            <div class="listing-container">
+                <!-- SIDEBAR FILTERS -->
+                <aside class="sidebar-filters">
+                    <div class="filter-section">
+                        <h3>Xüsusiyyətlər</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="delivery">
+                                <span class="checkmark"></span>
+                                🚚 Çatdırılma
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="takeaway">
+                                <span class="checkmark"></span>
+                                📦 Özü götür
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="terrace">
+                                <span class="checkmark"></span>
+                                🌿 Terras
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="parking">
+                                <span class="checkmark"></span>
+                                🅿️ Parkinq
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="wifi">
+                                <span class="checkmark"></span>
+                                📶 Wi-Fi
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="alcohol">
+                                <span class="checkmark"></span>
+                                🍷 Alkoqol
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Xidmət Növü</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-service="fine-dining">
+                                <span class="checkmark"></span>
+                                🍽️ Fine Dining
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-service="family">
+                                <span class="checkmark"></span>
+                                👨‍👩‍👧‍👦 Ailəvi
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-service="buffet">
+                                <span class="checkmark"></span>
+                                🍴 Buffet
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-service="catering">
+                                <span class="checkmark"></span>
+                                🎉 Katering
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>İş Saatları</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-hours="24h">
+                                <span class="checkmark"></span>
+                                🕛 24 saat
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-hours="breakfast">
+                                <span class="checkmark"></span>
+                                🌅 Səhər yeməyi
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-hours="lunch">
+                                <span class="checkmark"></span>
+                                🍽️ Günorta
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-hours="dinner">
+                                <span class="checkmark"></span>
+                                🌙 Axşam
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Ödəniş Üsulu</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="cash">
+                                <span class="checkmark"></span>
+                                💵 Nağd
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="card">
+                                <span class="checkmark"></span>
+                                💳 Kart
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="online">
+                                <span class="checkmark"></span>
+                                📱 Online
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- RESTAURANTS GRID -->
+                <main class="restaurants-main">
+                    <div class="restaurants-header">
+                        <div class="results-info">
+                            <h3>245 restoran və market tapıldı</h3>
+                            <p>Filterləri tətbiq etdiniz</p>
+                        </div>
+                        <div class="sort-options">
+                            <select class="sort-select" onchange="restaurantsSystem.handleSortChange(this.value)">
+                                <option value="rating">Ən yüksək reyting</option>
+                                <option value="newest">Ən yenilər</option>
+                                <option value="jobs">Çox vakansiya</option>
+                                <option value="name">Ada görə</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="restaurants-grid" id="restaurantsGrid">
+                        <!-- Restaurants will be loaded here dynamically -->
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+                        <button class="page-btn disabled">Əvvəlki</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">Növbəti</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BizNet.az</h3>
+                    <p>Azərbaycanın ən etibarlı iş və biznes platforması.</p>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">💼</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Keçidlər</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Səhifə</a></li>
+                        <li><a href="jobs.html">İş Elanları</a></li>
+                        <li><a href="freelancers.html">Freelancerlar</a></li>
+                        <li><a href="restaurants.html">Restoran/Market</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Şirkət</h4>
+                    <ul>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="contact.html">Əlaqə</a></li>
+                        <li><a href="privacy.html">Məxfilik</a></li>
+                        <li><a href="terms.html">Qaydalar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Əlaqə</h4>
+                    <p>📧 info@biznet.az</p>
+                    <p>📞 +994 12 345 67 89</p>
+                    <p>📍 Bakı, Azərbaycan</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 BizNet.az. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="restaurants.js"></script>
+</body>
+</html>

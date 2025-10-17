@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancerlar - BizNet.az</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="freelancers.css">
+    <link rel="stylesheet" href="jobs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>BizNet<span>.az</span></h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="jobs.html">Bütün Elanlar</a></li>
+                    <li><a href="freelancers.html" class="active">Freelancerlar</a></li>
+                    <li><a href="companies.html">Şirkətlər</a></li>
+                    <li><a href="restaurants.html">Restoran/Market</a></li>
+                    <li><a href="post-job.html" class="post-job-btn">Elan Yerləşdir</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-auth">
+                <a href="login.html" class="login-btn">Giriş</a>
+                <a href="login.html" class="register-btn">Qeydiyyat</a>
+            </div>
+
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Peşəkar Freelancerlar</h1>
+                <p>500-dən çox yüksək ixtisaslı freelancer - layihələriniz üçün ən yaxşı mütəxəssislər</p>
+                
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="number">547</span>
+                        <span class="label">Aktiv Freelancer</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">4.8</span>
+                        <span class="label">Orta Reyting</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">95%</span>
+                        <span class="label">Uğur Nisbəti</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">2,458</span>
+                        <span class="label">Tamamlanmış İş</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="search-filters">
+        <div class="container">
+            <div class="filters-container">
+                <!-- QUICK FILTERS -->
+                <div class="quick-filters">
+                    <button class="filter-btn active">Hamısı</button>
+                    <button class="filter-btn">Ən Yaxşılar</button>
+                    <button class="filter-btn">Yeni</button>
+                    <button class="filter-btn">Premium</button>
+                    <button class="filter-btn">Online</button>
+                    <button class="filter-btn">Yerli</button>
+                </div>
+
+                <!-- ADVANCED FILTERS -->
+                <div class="advanced-filters">
+                    <div class="filter-group">
+                        <label>Xidmət Növü</label>
+                        <select class="filter-select" id="serviceType">
+                            <option value="">Bütün xidmətlər</option>
+                            <option value="web-development">Veb Development</option>
+                            <option value="mobile-development">Mobil Development</option>
+                            <option value="graphic-design">Qrafik Dizayn</option>
+                            <option value="ui-ux">UI/UX Dizayn</option>
+                            <option value="digital-marketing">Digital Marketinq</option>
+                            <option value="content-writing">Məzmun Yazılışı</option>
+                            <option value="translation">Tərcümə</option>
+                            <option value="video-editing">Video Montaj</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Bacarıq</label>
+                        <select class="filter-select" id="skillFilter">
+                            <option value="">Bütün bacarıqlar</option>
+                            <option value="react">React</option>
+                            <option value="nodejs">Node.js</option>
+                            <option value="python">Python</option>
+                            <option value="photoshop">Photoshop</option>
+                            <option value="figma">Figma</option>
+                            <option value="seo">SEO</option>
+                            <option value="wordpress">WordPress</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Qiymət</label>
+                        <select class="filter-select" id="priceFilter">
+                            <option value="">Hər hansı qiymət</option>
+                            <option value="0-25">₼ 25-dək/saat</option>
+                            <option value="25-50">₼ 25-50/saat</option>
+                            <option value="50-100">₼ 50-100/saat</option>
+                            <option value="100+">₼ 100+/saat</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Təcrübə</label>
+                        <select class="filter-select" id="experienceFilter">
+                            <option value="">Hər hansı təcrübə</option>
+                            <option value="0-1">0-1 il</option>
+                            <option value="1-3">1-3 il</option>
+                            <option value="3-5">3-5 il</option>
+                            <option value="5+">5+ il</option>
+                        </select>
+                    </div>
+
+                    <button class="apply-filters-btn" onclick="freelancersSystem.applyFilters()">Filtrlə</button>
+                    <button class="reset-filters-btn" onclick="freelancersSystem.resetFilters()">Sıfırla</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREELANCERS LISTING -->
+    <section class="freelancers-listing">
+        <div class="container">
+            <div class="listing-container">
+                <!-- SIDEBAR FILTERS -->
+                <aside class="sidebar-filters">
+                    <div class="filter-section">
+                        <h3>Reyting</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-rating="5">
+                                <span class="checkmark"></span>
+                                ⭐⭐⭐⭐⭐ 4.5+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-rating="4">
+                                <span class="checkmark"></span>
+                                ⭐⭐⭐⭐ 4.0+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-rating="3">
+                                <span class="checkmark"></span>
+                                ⭐⭐⭐ 3.0+
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-rating="2">
+                                <span class="checkmark"></span>
+                                ⭐⭐ 2.0+
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Əlavə Xüsusiyyətlər</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="pro-verified">
+                                <span class="checkmark"></span>
+                                ✅ Pro Təsdiqli
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="available-now">
+                                <span class="checkmark"></span>
+                                🟢 Hazırdır
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="english">
+                                <span class="checkmark"></span>
+                                🇬🇧 İngilis dili
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-feature="russian">
+                                <span class="checkmark"></span>
+                                🇷🇺 Rus dili
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Çatdırılma Müddəti</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-delivery="24h">
+                                <span class="checkmark"></span>
+                                🚀 24 saat
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-delivery="3days">
+                                <span class="checkmark"></span>
+                                ⚡ 3 gün
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-delivery="1week">
+                                <span class="checkmark"></span>
+                                📅 1 həftə
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-delivery="flexible">
+                                <span class="checkmark"></span>
+                                🔄 Elastik
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Ödəniş Üsulu</h3>
+                        <div class="filter-options">
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="hourly">
+                                <span class="checkmark"></span>
+                                ⏰ Saatlıq
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="fixed">
+                                <span class="checkmark"></span>
+                                💰 Fix qiymət
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" data-payment="milestone">
+                                <span class="checkmark"></span>
+                                🎯 Mərhələli
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- FREELANCERS GRID -->
+                <main class="freelancers-main">
+                    <div class="freelancers-header">
+                        <div class="results-info">
+                            <h3>547 freelancer tapıldı</h3>
+                            <p>Filterləri tətbiq etdiniz</p>
+                        </div>
+                        <div class="sort-options">
+                            <select class="sort-select" onchange="freelancersSystem.handleSortChange(this.value)">
+                                <option value="rating">Ən yüksək reyting</option>
+                                <option value="newest">Ən yenilər</option>
+                                <option value="price-high">Yüksək qiymət</option>
+                                <option value="price-low">Aşağı qiymət</option>
+                                <option value="completed">Çox işlər</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="freelancers-grid" id="freelancersGrid">
+                        <!-- Freelancers will be loaded here dynamically -->
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+                        <button class="page-btn disabled">Əvvəlki</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">Növbəti</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BizNet.az</h3>
+                    <p>Azərbaycanın ən etibarlı iş və biznes platforması.</p>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">💼</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Keçidlər</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Səhifə</a></li>
+                        <li><a href="jobs.html">İş Elanları</a></li>
+                        <li><a href="freelancers.html">Freelancerlar</a></li>
+                        <li><a href="companies.html">Şirkətlər</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Şirkət</h4>
+                    <ul>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="contact.html">Əlaqə</a></li>
+                        <li><a href="privacy.html">Məxfilik</a></li>
+                        <li><a href="terms.html">Qaydalar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Əlaqə</h4>
+                    <p>📧 info@biznet.az</p>
+                    <p>📞 +994 12 345 67 89</p>
+                    <p>📍 Bakı, Azərbaycan</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 BizNet.az. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="freelancers.js"></script>
+</body>
+</html>
